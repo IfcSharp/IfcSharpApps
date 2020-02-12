@@ -1,0 +1,107 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION (('hello pipe long'), '2;1');
+FILE_NAME ('hello_pipe_from_cs_to_ifc_file', '2020-01-19T08:41:12', ('Bernhard Simon Bock'), (''), 'C#2Ifc2html', '', '');
+FILE_SCHEMA (('IFC4'));
+ENDSEC;
+DATA;
+/* local coords:                                                              */
+#101=IFCCARTESIANPOINT((0.,0.,0.));/* origin */
+#102=IFCDIRECTION((1.,0.,0.));/* X-axis */
+#103=IFCDIRECTION((0.,1.,0.));/* Y-axis */
+#104=IFCDIRECTION((0.,0.,1.));/* Z-axis */
+#105=IFCAXIS2PLACEMENT3D(#101,#104,#102);/* cartesian coordinate system */
+/* unit-declaration:                                                          */
+#121=IFCSIUNIT($,.LENGTHUNIT.,$,.METRE.);/* e.g. cartesian point coordinates */
+#122=IFCSIUNIT($,.PLANEANGLEUNIT.,$,.RADIAN.);/* rotation angles */
+#123=IFCUNITASSIGNMENT((#121,#122));
+/* ways to display:                                                           */
+#141=IFCGEOMETRICREPRESENTATIONCONTEXT('2D plane','2D-Schema Map',2,$,#105,$);
+#142=IFCGEOMETRICREPRESENTATIONCONTEXT('3D body','3D-Models VR',3,$,#105,$);
+#143=IFCGEOMETRICREPRESENTATIONSUBCONTEXT('axis1000','M1000',$,$,$,$,#141,1000.,.PLAN_VIEW.,$);
+#144=IFCGEOMETRICREPRESENTATIONSUBCONTEXT('plane500','M500',$,$,$,$,#141,500.,.PLAN_VIEW.,$);
+#145=IFCGEOMETRICREPRESENTATIONSUBCONTEXT('body300','LOD300',$,$,$,$,#142,$,.MODEL_VIEW.,$);
+/* assign global coords to 3D representation context:                         */
+#161=IFCPROJECTEDCRS('EPSG:25832','UTM in band 32','ETRS89','DHHN92','UTM','UTM32',#121);
+#162=IFCMAPCONVERSION(#142,#161,439949.,5466152.,130.,1.,0.,1.);/* base of local coords */
+/* assign contexts, units to project:                                         */
+#181=IFCPROJECT('3ITA8vzNzCVw2pyuHX7Ew5',$,'hello pipe project',$,$,$,$,(#142,#141),#123);
+/* 3D-body-context LOD 300:                                                   */
+/* Stahlbetonrohr DN400 DIN V 1201-DIN EN1916-Typ 2-SB-K 3000                 */
+/* d1=400mm    dsp=526mm    t =75mm     l  =3000mm                            */
+/* dg=694mm    lso=100mm    da=d1+2*t   dso=543.8mm                           */
+/*       >lso<>  < 3*(rg-ra)                                                  */
+/*    (7)*---*<         l         >      ^rg =dg /2                           */
+/*       |  (6)\(5)          >lso<       |                                    */
+/*       |      *-------------*(4)       ^ra =da /2                           */
+/*    (8)*---*(9)             |          ^rso=dso/2                           */
+/*           |             (3)*---*(2)   ^rsp=rsp/2                           */
+/*           |                    |      |                                    */
+/*       (10)*--------------------*(1=11)^ri =d1 /2                           */
+/*                               y^      |                                    */
+/*                             x  | LocalCoords                               */
+/* -- * ---- * ---- * ---- * --<- o ---- * ---- * ---- pipe-axis              */
+#201=IFCCARTESIANPOINT((0.,0.2));/*  (1): x=0              , y=ri  */
+#202=IFCCARTESIANPOINT((0.,0.263));/*  (2): x=0              , y=rsp */
+#203=IFCCARTESIANPOINT((0.1,0.263));/*  (3): x=lso            , y=rsp */
+#204=IFCCARTESIANPOINT((0.1,0.275));/*  (4): x=lso            , y=ra  */
+#205=IFCCARTESIANPOINT((2.784,0.275));/*  (5): x=l-3*(rg-ra)    , y=ra  */
+#206=IFCCARTESIANPOINT((3.,0.347));/*  (6): x=l              , y=rg  */
+#207=IFCCARTESIANPOINT((3.1,0.347));/*  (7): x=l+lso          , y=rg  */
+#208=IFCCARTESIANPOINT((3.1,0.2719));/*  (8): x=l+lso          , y=rso */
+#209=IFCCARTESIANPOINT((3.,0.2719));/*  (9): x=l              , y=rso */
+#210=IFCCARTESIANPOINT((3.,0.2));/* (10): x=l              , y=ri  */
+#211=IFCCARTESIANPOINT((0.,0.2));/* (11)=(1)                       */
+#212=IFCPOLYLINE((#201,#202,#203,#204,#205,#206,#207,#208,#209,#210,#211));
+#213=IFCARBITRARYCLOSEDPROFILEDEF(.AREA.,$,#212);/* declare poly as area */
+#214=IFCAXIS2PLACEMENT3D(#101,#104,#102);/* revolve-plane */
+#215=IFCAXIS1PLACEMENT(#101,#102);/* rotation axis */
+#216=IFCREVOLVEDAREASOLID(#213,#214,#215,6.2831853072);/* how */
+#217=IFCSHAPEREPRESENTATION(#145,'body300',$,(#216));/* as */
+/* 2D-context M1:1000 axis-single line:                                       */
+#301=IFCCARTESIANPOINT((0.,0.));
+#302=IFCCARTESIANPOINT((3.,0.));
+#303=IFCPOLYLINE((#301,#302));
+#304=IFCSHAPEREPRESENTATION(#143,'axis1000',$,(#303));/* as */
+/* 2D-context M1:500 da-double-line:                                          */
+#401=IFCCARTESIANPOINT((0.,-0.275));
+#402=IFCCARTESIANPOINT((3.,-0.275));
+#403=IFCCARTESIANPOINT((0.,0.275));
+#404=IFCCARTESIANPOINT((3.,0.275));
+#405=IFCPOLYLINE((#401,#402));
+#406=IFCPOLYLINE((#403,#404));
+#407=IFCSHAPEREPRESENTATION(#144,'plane500',$,(#405,#406));/* as */
+/* product shape definition, placement and instancing:                        */
+#501=IFCPRODUCTDEFINITIONSHAPE($,$,(#217,#304,#407));/* with */
+#502=IFCLOCALPLACEMENT($,#105);/* where */
+#503=IFCFLOWSEGMENT('1yv4m$g550xxJ12lrQijTe',$,'pipe',$,$,#502,#501,$);/* what */
+/* assign materials to pipe:                                                  */
+#601=IFCMATERIAL('Concrete','Beton','C40/50');
+#602=IFCMATERIAL('Steel','reinforcing',$);
+#603=IFCMATERIALLIST((#601,#602));
+#604=IFCRELASSOCIATESMATERIAL('001C$6Unv2sgvdNXG11xnO',$,$,$,(#503),#603);
+/* assign properties to pipe:                                                 */
+#701=IFCPROPERTYSINGLEVALUE('DN',$,IFCREAL(400.),$);
+#702=IFCPROPERTYSET('31gdsZjjH8aPlOQrQVYsHh',$,'pipe-properties',$,(#701));
+#703=IFCRELDEFINESBYPROPERTIES('1AWWmYb$9CzeimO$eh7pPf',$,$,$,(#503),#702);
+/* assign quantities to pipe:                                                 */
+#751=IFCQUANTITYLENGTH('Height',$,$,0.4,$);
+#752=IFCQUANTITYLENGTH('Width',$,$,0.4,$);
+#753=IFCQUANTITYLENGTH('Length',$,$,3.,$);
+#754=IFCELEMENTQUANTITY('25zKyjmCTFXQNlN7swPsOQ',$,$,$,$,(#751,#752,#753));
+#755=IFCRELDEFINESBYPROPERTIES('1Iwgh9iCLE49Xzmt2R_aSg',$,$,$,(#503),#754);
+/* assign connectivity:                                                       */
+#801=IFCCARTESIANPOINT((0.,0.,0.));/* from-connection-coords */
+#802=IFCAXIS2PLACEMENT3D(#801,#102,$);
+#803=IFCLOCALPLACEMENT($,#802);
+#804=IFCDISTRIBUTIONPORT('2yIdXdtYz9VPCGjSprJea7',$,'From',$,$,#803,$,.SOURCE.,.PIPE.,.DRAINAGE.);
+#805=IFCRELCONNECTSPORTTOELEMENT('27z9EiM6T69Bl0WPzVB1KO',$,$,$,#804,#503);
+#806=IFCCARTESIANPOINT((3.,0.,0.));/* to-connection-coords */
+#807=IFCAXIS2PLACEMENT3D(#806,#102,$);
+#808=IFCLOCALPLACEMENT($,#807);
+#809=IFCDISTRIBUTIONPORT('0WbZlTyAv2Wux$tW0zLO_X',$,'To',$,$,#808,$,.SINK.,.PIPE.,.DRAINAGE.);
+#810=IFCRELCONNECTSPORTTOELEMENT('2LXLP_44bDaPIR$wzQfiZv',$,$,$,#809,#503);
+/* assign elements to project:                                                */
+#901=IFCRELAGGREGATES('0H6vfgPv922ekwdjQBd50N',$,$,$,#181,(#503,#804,#809));
+ENDSEC;
+END-ISO-10303-21;

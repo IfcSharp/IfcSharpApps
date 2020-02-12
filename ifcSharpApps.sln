@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello_project", "IfcSharp\hello_project\hello_project.csproj", "{1B536DBB-2CDD-4B46-8358-C3137152B82A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello_pipe", "IfcSharp\hello_pipe\hello_pipe.csproj", "{30306C1F-35C6-4897-A906-0FD6964AEEA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "from_step", "IfcStep\from_step\from_step.csproj", "{2577C7A5-2ED1-4BE8-B674-E51541E03248}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "from_sqlite", "IfcSqlite\from_sqlite\from_sqlite.csproj", "{0B9A18E1-5D4A-48B7-895D-84A74B1D163C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello_schema", "IfcSharp\hello_schema\hello_schema.csproj", "{E1FE7B46-B6D1-4809-BFD7-1921193DE7AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "from_ifcSQL", "ifcSQL\from_ifcSQL\from_ifcSQL.csproj", "{F9F0213A-A8B8-4494-A2CD-9A24EE31D1DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B536DBB-2CDD-4B46-8358-C3137152B82A}.Debug|x86.ActiveCfg = Debug|x86
+		{1B536DBB-2CDD-4B46-8358-C3137152B82A}.Debug|x86.Build.0 = Debug|x86
+		{1B536DBB-2CDD-4B46-8358-C3137152B82A}.Release|x86.ActiveCfg = Release|x86
+		{1B536DBB-2CDD-4B46-8358-C3137152B82A}.Release|x86.Build.0 = Release|x86
+		{30306C1F-35C6-4897-A906-0FD6964AEEA7}.Debug|x86.ActiveCfg = Debug|x86
+		{30306C1F-35C6-4897-A906-0FD6964AEEA7}.Debug|x86.Build.0 = Debug|x86
+		{30306C1F-35C6-4897-A906-0FD6964AEEA7}.Release|x86.ActiveCfg = Release|x86
+		{30306C1F-35C6-4897-A906-0FD6964AEEA7}.Release|x86.Build.0 = Release|x86
+		{2577C7A5-2ED1-4BE8-B674-E51541E03248}.Debug|x86.ActiveCfg = Debug|x86
+		{2577C7A5-2ED1-4BE8-B674-E51541E03248}.Debug|x86.Build.0 = Debug|x86
+		{2577C7A5-2ED1-4BE8-B674-E51541E03248}.Release|x86.ActiveCfg = Release|x86
+		{2577C7A5-2ED1-4BE8-B674-E51541E03248}.Release|x86.Build.0 = Release|x86
+		{0B9A18E1-5D4A-48B7-895D-84A74B1D163C}.Debug|x86.ActiveCfg = Debug|x86
+		{0B9A18E1-5D4A-48B7-895D-84A74B1D163C}.Debug|x86.Build.0 = Debug|x86
+		{0B9A18E1-5D4A-48B7-895D-84A74B1D163C}.Release|x86.ActiveCfg = Release|x86
+		{0B9A18E1-5D4A-48B7-895D-84A74B1D163C}.Release|x86.Build.0 = Release|x86
+		{E1FE7B46-B6D1-4809-BFD7-1921193DE7AB}.Debug|x86.ActiveCfg = Debug|x86
+		{E1FE7B46-B6D1-4809-BFD7-1921193DE7AB}.Debug|x86.Build.0 = Debug|x86
+		{E1FE7B46-B6D1-4809-BFD7-1921193DE7AB}.Release|x86.ActiveCfg = Release|x86
+		{E1FE7B46-B6D1-4809-BFD7-1921193DE7AB}.Release|x86.Build.0 = Release|x86
+		{F9F0213A-A8B8-4494-A2CD-9A24EE31D1DA}.Debug|x86.ActiveCfg = Debug|x86
+		{F9F0213A-A8B8-4494-A2CD-9A24EE31D1DA}.Debug|x86.Build.0 = Debug|x86
+		{F9F0213A-A8B8-4494-A2CD-9A24EE31D1DA}.Release|x86.ActiveCfg = Release|x86
+		{F9F0213A-A8B8-4494-A2CD-9A24EE31D1DA}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B858AF59-7FB1-45C0-9B31-D88CD03B4A2E}
+	EndGlobalSection
+EndGlobal

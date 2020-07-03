@@ -5,7 +5,11 @@ try{
 // otherwise: ifc.Model myModel=new ifc.Model(name:"my_model"); myModel.ToStepFile(); or: ifc.Model.FromStepFile("__.ifc").ToHtmlFile();
 ifc.Repository.CurrentModel=new ifc.Model(name:"hello_project_output"); 
 
-new ifc.Project(Name:new ifc.Label("my first ifc-project"));  // appends entity to ifc.Repository.CurrentModel
+#if IFC2X3
+new ifc.Project(_OwnerHistory:null,RepresentationContexts:null,UnitsInContext:null,GlobalId:ifc.GloballyUniqueId.NewId(),Name:new ifc.Label("my first ifc-project"));  // appends entity to ifc.Repository.CurrentModel
+#else
+new ifc.Project(GlobalId:ifc.GloballyUniqueId.NewId(),Name:new ifc.Label("my first ifc-project"));  // appends entity to ifc.Repository.CurrentModel
+#endif
 
 ifc.Repository.CurrentModel.ToStepFile();  // creates hello_project_output.ifc (step-format)
 ifc.Repository.CurrentModel.ToHtmlFile();  // creates hello_project_output.html in step-format with syntax highlighting

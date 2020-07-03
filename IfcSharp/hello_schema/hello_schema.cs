@@ -3,9 +3,14 @@ class hello_schema {static void Main(string[] args){//##########################
 try{ 
 
 ifc.ENTITY.TypeDictionary.FillEntityTypeComponentsDict();
-foreach (ifc.ENTITY.ComponentsType ct in ifc.ENTITY.TypeDictionary.EntityTypeComponentsList) 
-  foreach (System.Reflection.FieldInfo fi in ct.AttribList) 
-    {}// System.Console.WriteLine(ct.EntityType.Name+":"+fi.Name);
+int Counter=0;
+foreach (ifc.ENTITY.ComponentsType ct in ifc.ENTITY.TypeDictionary.EntityTypeComponentsList) if (++Counter<5)
+        {System.Console.WriteLine("Entity "+ct.EntityType.Name);
+         foreach (System.Reflection.FieldInfo fi in ct.AttribList) 
+                 {foreach (System.Attribute attr in fi.GetCustomAttributes(true)) if (attr is ifcAttribute) System.Console.Write(" ("+((ifcAttribute)attr).OrdinalPosition+")");
+                  System.Console.WriteLine(" "+fi.Name+" "+fi.FieldType.ToString());
+                 }
+       }
 
 }catch(System.Exception e){System.Console.WriteLine(e.Message);} 
 }}//########################################################################################################################

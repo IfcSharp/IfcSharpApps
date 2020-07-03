@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30306C1F-35C6-4897-A906-0FD6964AEEA7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>hello_pipe</RootNamespace>
+    <AssemblyName>hello_pipe</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="..\..\IfcSpecification.csproj" />
+  <Choose>
+    <When Condition=" '$(IfcSpecification)'=='IFC2X3' ">
+      <ItemGroup>
+        <Compile Link="ifc_IFC2X3_schema\ifc_IFC2X3_generated_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC2X3_generated_entity.cs" />
+        <Compile Link="ifc_IFC2X3_schema\ifc_IFC2X3_generated_enum.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC2X3_generated_enum.cs" />
+        <Compile Link="ifc_IFC2X3_schema\ifc_IFC2X3_generated_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC2X3_generated_select.cs" />
+        <Compile Link="ifc_IFC2X3_schema\ifc_IFC2X3_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC2X3_generated_type.cs" />
+      </ItemGroup>
+    </When>
+    <When Condition=" '$(IfcSpecification)'=='IFC4' ">
+      <ItemGroup>
+        <Compile Link="ifc_IFC4_schema\ifc_IFC4_generated_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4_generated_entity.cs" />
+        <Compile Link="ifc_IFC4_schema\ifc_IFC4_generated_enum.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4_generated_enum.cs" />
+        <Compile Link="ifc_IFC4_schema\ifc_IFC4_generated_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4_generated_select.cs" />
+        <Compile Link="ifc_IFC4_schema\ifc_IFC4_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4_generated_type.cs" />
+      </ItemGroup>
+    </When>
+    <When Condition=" '$(IfcSpecification)'=='IFC4X1' ">
+      <ItemGroup>
+        <Compile Link="ifc_IFC4X1_schema\ifc_IFC4X1_generated_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X1_generated_entity.cs" />
+        <Compile Link="ifc_IFC4X1_schema\ifc_IFC4X1_generated_enum.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X1_generated_enum.cs" />
+        <Compile Link="ifc_IFC4X1_schema\ifc_IFC4X1_generated_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X1_generated_select.cs" />
+        <Compile Link="ifc_IFC4X1_schema\ifc_IFC4X1_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X1_generated_type.cs" />
+      </ItemGroup>
+    </When>
+    <When Condition=" '$(IfcSpecification)'=='IFC4X2' ">
+      <ItemGroup>
+        <Compile Link="ifc_IFC4X2_schema\ifc_IFC4X2_generated_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X2_generated_entity.cs" />
+        <Compile Link="ifc_IFC4X2_schema\ifc_IFC4X2_generated_enum.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X2_generated_enum.cs" />
+        <Compile Link="ifc_IFC4X2_schema\ifc_IFC4X2_generated_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X2_generated_select.cs" />
+        <Compile Link="ifc_IFC4X2_schema\ifc_IFC4X2_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X2_generated_type.cs" />
+      </ItemGroup>
+    </When>
+    <When Condition=" '$(IfcSpecification)'=='IFC4X3_RC1' ">
+      <ItemGroup>
+        <Compile Link="ifc_IFC4X3_RC1_schema\ifc_IFC4X3_RC1_generated_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC1_generated_entity.cs" />
+        <Compile Link="ifc_IFC4X3_RC1_schema\ifc_IFC4X3_RC1_generated_enum.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC1_generated_enum.cs" />
+        <Compile Link="ifc_IFC4X3_RC1_schema\ifc_IFC4X3_RC1_generated_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC1_generated_select.cs" />
+        <Compile Link="ifc_IFC4X3_RC1_schema\ifc_IFC4X3_RC1_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC1_generated_type.cs" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <!-- ifcStep -->
+    <Compile Link="ifc_io\ifc_in_step.cs" Include="..\..\..\IfcSharpLibrary\IfcStep\ifc_in_step.cs" />
+    <Compile Link="ifc_io\ifc_out_step.cs" Include="..\..\..\IfcSharpLibrary\IfcStep\ifc_out_step.cs" />
+    <Compile Link="ifc_io\ifc_out_html.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_out_html.cs" />
+    <Compile Link="ifc_io\ifc_out_cs.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_out_cs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- ifcSharpCore -->
+    <Compile Link="ifc_core\ifc_base.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base.cs" />
+    <Compile Link="ifc_core\ifc_base_sql.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_sql.cs" />
+    <Compile Link="ifc_core\ifc_header.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_header.cs" />
+    <Compile Link="ifc_core\ifc_model.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_model.cs" />
+    <Compile Link="ifc_core\ifc_schema.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_schema.cs" />
+    <Compile Link="ifc_core\ifc_encoding.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_encoding.cs" />
+    <Compile Link="ifc_core\ifc_sort.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_sort.cs" />
+    <Compile Link="ifc_core\ifc_base_list.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_list.cs" />
+    <Compile Link="ifc_core\ifc_base_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_type.cs" />
+    <Compile Link="ifc_core\ifc_base_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_entity.cs" />
+    <Compile Link="ifc_core\ifc_base_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_select.cs" />
+    <Compile Link="ifc_core\Ifc_guid.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\Ifc_guid.cs" />
+    <Compile Link="ifc_core\ifc_base_units.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_units.cs" />
+    <Compile Link="ifc_core\ifc_base_geometry.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_geometry.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- ifcSqlite -->
+    <Compile Link="ifc_sqlite\ifc_sqlite_database.cs" Include="..\..\..\IfcSharpLibrary\IfcSqlite\ifc_sqlite_database.cs" />
+    <Compile Link="ifc_sqlite\ifc_sqlite_data.cs" Include="..\..\..\IfcSharpLibrary\IfcSqlite\ifc_sqlite_data.cs" />
+    <Compile Link="ifc_sqlite\ifc_in_sqlite.cs" Include="..\..\..\IfcSharpLibrary\IfcSqlite\ifc_in_sqlite.cs" />
+    <Compile Link="ifc_sqlite\ifc_out_sqlite.cs" Include="..\..\..\IfcSharpLibrary\IfcSqlite\ifc_out_sqlite.cs" />
+  </ItemGroup>
+  <Import Project="..\..\..\IfcSharpLibrary\IfcSqlite\ifc_sqlite.csproj" />
+  <ItemGroup>
+    <!-- ifc_sql -->
+    <Compile Link="ifcSQL\ifcSQL_for_ifcSQL_Instance.cs" Include="..\..\..\IfcSharpLibrary\IfcSql\ifcSQL_for_ifcSQL_Instance.cs" />
+    <Compile Link="ifcSQL\ifcSQL_db_interface.cs" Include="..\..\..\IfcSharpLibrary\IfcSql\ifcSQL_db_interface.cs" />
+    <Compile Link="ifc_io\ifc_out_sql.cs" Include="..\..\..\IfcSharpLibrary\IfcSql\ifc_out_sql.cs" />
+    <Compile Link="ifc_io\ifc_in_sql.cs" Include="..\..\..\IfcSharpLibrary\IfcSql\ifc_in_sql.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="hello_pipe.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

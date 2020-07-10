@@ -2,7 +2,9 @@
 
 class from_step {static void Main(string[] args){//#######################################################################
 
-ifc.Model.FromStepFile("../../hello_pipe.ifc").ToHtmlFile();
+ifc.Repository.CurrentModel=ifc.Model.FromStepFile("../../hello_pipe.ifc");
+ifc.Repository.CurrentModel.ToHtmlFile();
+ifc.Repository.CurrentModel.ToCsFile(); 
 
 }}//######################################################################################################################
 

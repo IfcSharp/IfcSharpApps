@@ -8,8 +8,8 @@
     <ProjectGuid>{E1FE7B46-B6D1-4809-BFD7-1921193DE7AB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>hello_project</RootNamespace>
-    <AssemblyName>hello_project</AssemblyName>
+    <RootNamespace>hello_schema</RootNamespace>
+    <AssemblyName>hello_schema</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>

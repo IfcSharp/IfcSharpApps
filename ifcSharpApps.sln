@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5_hello_schema", "IfcSharp\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6_from_ifcSQL", "ifcSQL\from_ifcSQL\6_from_ifcSQL.csproj", "{F9F0213A-A8B8-4494-A2CD-9A24EE31D1DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7_hello_pipe_type", "IfcSharp\hello_pipe_type\7_hello_pipe_type.csproj", "{8F81DEED-F238-4B4B-8DAE-3AA682F79F01}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86

@@ -2,5 +2,5 @@
 
 # from_ifcSQL
 
-**from_ifcSQL.cs** is an example how to read models with ifcSQL and to export them to a html- and step-file.
+**from_ifcSQL.cs** is an example how to read models with the ifcSQL-API and to export them to a html- and step-file.
 

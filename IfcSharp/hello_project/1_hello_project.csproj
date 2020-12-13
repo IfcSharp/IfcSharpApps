@@ -87,6 +87,14 @@
         <Compile Link="ifc_IFC4X3_RC1_schema\ifc_IFC4X3_RC1_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC1_generated_type.cs" />
       </ItemGroup>
     </When>
+    <When Condition=" '$(IfcSpecification)'=='IFC4X3_RC2' ">
+      <ItemGroup>
+        <Compile Link="ifc_IFC4X3_RC2_schema\ifc_IFC4X3_RC2_generated_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC2_generated_entity.cs" />
+        <Compile Link="ifc_IFC4X3_RC2_schema\ifc_IFC4X3_RC2_generated_enum.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC2_generated_enum.cs" />
+        <Compile Link="ifc_IFC4X3_RC2_schema\ifc_IFC4X3_RC2_generated_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC2_generated_select.cs" />
+        <Compile Link="ifc_IFC4X3_RC2_schema\ifc_IFC4X3_RC2_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC2_generated_type.cs" />
+      </ItemGroup>
+    </When>
   </Choose>
   <ItemGroup>
     <!-- ifcStep -->

@@ -120,16 +120,16 @@ var RevolvedPoly        =new ifc.RevolvedAreaSolid         (SweptArea       :rpd
                                                                                                    ),
                                                             Angle           :(ifc.PlaneAngleMeasure)(2*System.Math.PI)
                                                            );
-var FlowSegmentShpRepr1 =new ifc.ShapeRepresentation       (ContextOfItems  :SubContextBody,
+var PipeSegmentShpRepr1 =new ifc.ShapeRepresentation       (ContextOfItems  :SubContextBody,
                                                             Items           :new ifc.Set1toUnbounded_RepresentationItem(RevolvedPoly)
                                                            );
                          new ifc.EntityComment             (CommentLine     :"product shape definition, placement and instancing:");
-var FlowSegProductDefShp=new ifc.ProductDefinitionShape    (Representations :new ifc.List1toUnbounded_Representation(FlowSegmentShpRepr1));
-var FlowSegmentPlacement=new ifc.LocalPlacement            (RelativePlacement:new ifc.Axis2Placement(LocalCoords));
-var FlowSegment         =new ifc.FlowSegment               (GlobalId        :null,
+var PipeSegProductDefShp=new ifc.ProductDefinitionShape    (Representations :new ifc.List1toUnbounded_Representation(PipeSegmentShpRepr1));
+var PipeSegmentPlacement=new ifc.LocalPlacement            (RelativePlacement:new ifc.Axis2Placement(LocalCoords));
+var PipeSegment         =new ifc.PipeSegment               (GlobalId        :null,
                                                             Name            :(ifc.Label)"pipe",
-                                                           _ObjectPlacement :FlowSegmentPlacement,
-                                                           _Representation  :FlowSegProductDefShp
+                                                           _ObjectPlacement :PipeSegmentPlacement,
+                                                           _Representation  :PipeSegProductDefShp
                                                            );
                          new ifc.EntityComment             (CommentLine     :"assign properties to pipe:");
 var psv                 =new ifc.PropertySingleValue       (Name            :new ifc.Identifier("DN"),
@@ -139,11 +139,11 @@ var psv                 =new ifc.PropertySingleValue       (Name            :new
 var ps1                 =new ifc.PropertySet               (Name            :new ifc.Label("pipe-properties"),
                                                             HasProperties   :new ifc.Set1toUnbounded_Property(psv)
                                                            );
-                         new ifc.RelDefinesByProperties    (RelatedObjects  :new  ifc.Set1toUnbounded_ObjectDefinition(FlowSegment),
+                         new ifc.RelDefinesByProperties    (RelatedObjects  :new  ifc.Set1toUnbounded_ObjectDefinition(PipeSegment),
                                                             RelatingPropertyDefinition:new ifc.PropertySetDefinitionSelect(ps1)
                                                            );
                          new ifc.RelAggregates             (RelatingObject  : Project,
-                                                            RelatedObjects  : new ifc.Set1toUnbounded_ObjectDefinition(FlowSegment),
+                                                            RelatedObjects  : new ifc.Set1toUnbounded_ObjectDefinition(PipeSegment),
                                                             EndOfLineComment:"assign elements to project:"
                                                            );
 PipeModel.ToStepFile(); 

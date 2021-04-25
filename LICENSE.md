@@ -1,1 +1,1 @@
-see https://github.com/IfcSharp/IfcSharpLibrary/tree/master/Licence
+see https://github.com/IfcSharp/IfcSharpLibrary/blob/master/License.md

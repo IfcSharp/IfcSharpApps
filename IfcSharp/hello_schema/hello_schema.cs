@@ -6,21 +6,31 @@ using System.Collections.Generic;
 class hello_schema {static void Main(string[] args){//#####################################################################
 try{ 
 
-System.Collections.Generic.SortedSet<string> set=new SortedSet<string>();
+ifc.ENTITY.TypeDictionary.FillEntityTypeComponentsDict(); // collect all schema-informations of entities 
 
-ifc.ENTITY.TypeDictionary.FillEntityTypeComponentsDict();
-int Counter=0;
-foreach (ifc.ENTITY.ComponentsType ct in ifc.ENTITY.TypeDictionary.EntityTypeComponentsList) //if (++Counter<5)
-        {//System.Console.WriteLine("Entity "+ct.EntityType.Name);
-         foreach (System.Reflection.FieldInfo fi in ct.AttribList) 
-                 {foreach (System.Attribute attr in fi.GetCustomAttributes(true)) if (attr is ifcAttribute) 
-                    if (fi.Name[0]=='_') set.Add(fi.Name);
-                  //System.Console.WriteLine(" "+fi.Name+" "+fi.FieldType.ToString());
-                 }
+foreach (ifc.ENTITY.ComponentsType ct in ifc.ENTITY.TypeDictionary.EntityTypeComponentsList) 
+        {bool HasDerivedAttributes=false; foreach (ifc.ENTITY.AttribInfo ai in ct.AttribList) if (ai.IsDerived) HasDerivedAttributes=true; 
+         bool NoFilter=false; NoFilter=true;// set to true for all entity-classes
+         if (HasDerivedAttributes || NoFilter)  // filter-example
+            {System.Console.Write("\nEntity "+ct.EntityType.Name);
+             System.Type BaseType=ct.EntityType.BaseType; while (BaseType!=null && BaseType.Name!="ENTITY") {System.Console.Write("<"+BaseType.Name); BaseType=BaseType.BaseType; }
+             System.Console.WriteLine(":");
+             foreach (ifc.ENTITY.AttribInfo ai in ct.AttribList) 
+                     {System.Type FieldType=ai.field.FieldType;  
+                      bool Nullable=(System.Nullable.GetUnderlyingType(FieldType)!=null);
+                      if (Nullable) FieldType=System.Nullable.GetUnderlyingType(ai.field.FieldType);
+                      string TypeName=FieldType.Name;
+                      bool IsAbstract=FieldType.IsAbstract;
+                      string BaseTypeName="-";
+                      if (FieldType.IsEnum)                         BaseTypeName="ENUM";
+                      if (FieldType.IsSubclassOf(typeof(TypeBase))) BaseTypeName="TYPE";
+                      if (FieldType.IsSubclassOf(typeof(ENTITY)))   BaseTypeName="ENTITY";
+                      if (FieldType.IsSubclassOf(typeof(SELECT)))   BaseTypeName="SELECT";
+                      System.Console.WriteLine(ai.OrdinalPosition+": "+TypeName+" "+ai.field.Name+((ai.IsDerived)?" IsDerived":"")+((ai.optional)?" [optional]":"")+" ["+((Nullable)?"nullable ":"")+BaseTypeName+"]"+((ai.field.DeclaringType!=ct.EntityType)?" of class "+ai.field.DeclaringType.Name:"")+((IsAbstract)?"[abstract]":""));
+                     }
+             foreach (System.Reflection.FieldInfo fi in ct.InversList) System.Console.WriteLine("INV: "+fi.FieldType.Name+" "+fi.Name+" of class "+fi.DeclaringType.Name);
+           }
        }
-
-foreach (string s in set) 
-System.Console.WriteLine(s);
 
 }catch(System.Exception e){System.Console.WriteLine(e.Message);} 
 }}//########################################################################################################################

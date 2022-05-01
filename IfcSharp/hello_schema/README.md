@@ -12,8 +12,8 @@ try{
 
 ifc.ENTITY.TypeDictionary.FillEntityTypeComponentsDict();
 foreach (ifc.ENTITY.ComponentsType ct in ifc.ENTITY.TypeDictionary.EntityTypeComponentsList) 
-  foreach (System.Reflection.FieldInfo fi in ct.AttribList) 
-     System.Console.WriteLine(ct.EntityType.Name+":"+fi.Name);
+  foreach (ifc.ENTITY.AttribInfo ai in ct.AttribList) 
+     System.Console.WriteLine(ct.EntityType.Name+":"+ai.field.Name);
 
 }catch(System.Exception e){System.Console.WriteLine(e.Message);} 
 }}//########################################################################################################################

@@ -17,9 +17,9 @@ ifc.Repository.CurrentModel.ToCsFile();    // creates hello_project_output.cs wi
 ifc.Repository.CurrentModel.ToSqliteFile();// creates hello_project_output.sqlite3 with the default option exportCompleteSchema=false 
 ifc.Repository.CurrentModel.ToXmlFile();   // creates hello_project_output.ifcXml
 ifc.Repository.CurrentModel.ToSqlFile();   // creates SQL for ifcSQL without server-connection
-//ifc.Repository.CurrentModel.ToSql(ServerName: System.Environment.GetEnvironmentVariable("SqlServer"), DatabaseName:"ifcSQL_Instance",ProjectId:0,WriteMode:ifc.Model.eWriteMode.OnlyIfEmpty); // Sql server connection required
-//ifc.Repository.CurrentModel.ToSql(ServerName: System.Environment.GetEnvironmentVariable("SqlServer"), DatabaseName:"ifcSQL_Instance",WriteMode:ifc.Model.eWriteMode.CreateNewProject); // Sql server connection required
-//ifc.Repository.CurrentModel.ToSql(ServerName: System.Environment.GetEnvironmentVariable("SqlServer"), DatabaseName:"ifcSQL_Instance",WriteMode:ifc.Model.eWriteMode.DeleteBeforeWrite); // Sql server connection required
+//ifc.Repository.CurrentModel.ToSql(ServerName: System.Environment.GetEnvironmentVariable("SqlServer"), DatabaseName:"ifcSQL",ProjectId:0,WriteMode:ifc.Model.eWriteMode.OnlyIfEmpty); // Sql server connection required
+//ifc.Repository.CurrentModel.ToSql(ServerName: System.Environment.GetEnvironmentVariable("SqlServer"), DatabaseName:"ifcSQL",WriteMode:ifc.Model.eWriteMode.CreateNewProject); // Sql server connection required
+//ifc.Repository.CurrentModel.ToSql(ServerName: System.Environment.GetEnvironmentVariable("SqlServer"), DatabaseName:"ifcSQL",WriteMode:ifc.Model.eWriteMode.DeleteBeforeWrite); // Sql server connection required
 }catch(System.Exception e){System.Console.WriteLine(e.Message);} 
 }}//########################################################################################################################
 

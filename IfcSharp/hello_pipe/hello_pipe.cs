@@ -149,7 +149,7 @@ var ps1                 =new ifc.PropertySet               (Name            :new
 PipeModel.ToStepFile(); 
 PipeModel.ToHtmlFile();
 //PipeModel.ToSqliteFile();
-//PipeModel.ToSql(ServerName: System.Environment.GetEnvironmentVariable("SqlServer"), DatabaseName:"ifcSQL_Instance",WriteMode:ifc.Model.eWriteMode.CreateNewProject); // Sql server connection required
+PipeModel.ToSql(ServerName: System.Environment.GetEnvironmentVariable("SqlServer"), DatabaseName:"ifcSQL",WriteMode:ifc.Model.eWriteMode.CreateNewProject); // Sql server connection required
 
 #endif
 }}//########################################################################################################################

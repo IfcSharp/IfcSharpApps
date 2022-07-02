@@ -131,6 +131,11 @@
     <Compile Link="ifc_io\ifc_out_cs.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_out_cs.cs" />
   </ItemGroup>
   <ItemGroup>
+    <!-- ifc_xml -->
+    <Compile Link="ifc_io\ifc_out_xml.cs" Include="..\..\..\IfcSharpLibrary\IfcXml\ifc_out_Xml.cs" />
+    <Compile Link="ifc_io\ifc_in_xml.cs" Include="..\..\..\IfcSharpLibrary\IfcXml\ifc_in_xml.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <!-- ifcSharpCore -->
     <Compile Link="ifc_core\ifc_base.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base.cs" />
     <Compile Link="ifc_core\ifc_base_sql.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_sql.cs" />

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\IfcSpecification.csproj" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -35,8 +36,8 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <OutputPath>$(IfcSpecification)</OutputPath>
+    <DefineConstants>TRACE;DEBUG;$(IfcSpecification)</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -72,57 +73,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <Import Project="..\..\IfcSpecification.csproj" />
-  <Choose>
-    <When Condition=" '$(IfcSpecification)'=='IFC2X3' ">
-      <ItemGroup>
-        <Compile Link="ifc_IFC2X3_schema\ifc_IFC2X3_generated_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC2X3_generated_entity.cs" />
-        <Compile Link="ifc_IFC2X3_schema\ifc_IFC2X3_generated_enum.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC2X3_generated_enum.cs" />
-        <Compile Link="ifc_IFC2X3_schema\ifc_IFC2X3_generated_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC2X3_generated_select.cs" />
-        <Compile Link="ifc_IFC2X3_schema\ifc_IFC2X3_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC2X3_generated_type.cs" />
-      </ItemGroup>
-    </When>
-    <When Condition=" '$(IfcSpecification)'=='IFC4' ">
-      <ItemGroup>
-        <Compile Link="ifc_IFC4_schema\ifc_IFC4_generated_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4_generated_entity.cs" />
-        <Compile Link="ifc_IFC4_schema\ifc_IFC4_generated_enum.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4_generated_enum.cs" />
-        <Compile Link="ifc_IFC4_schema\ifc_IFC4_generated_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4_generated_select.cs" />
-        <Compile Link="ifc_IFC4_schema\ifc_IFC4_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4_generated_type.cs" />
-      </ItemGroup>
-    </When>
-    <When Condition=" '$(IfcSpecification)'=='IFC4X1' ">
-      <ItemGroup>
-        <Compile Link="ifc_IFC4X1_schema\ifc_IFC4X1_generated_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X1_generated_entity.cs" />
-        <Compile Link="ifc_IFC4X1_schema\ifc_IFC4X1_generated_enum.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X1_generated_enum.cs" />
-        <Compile Link="ifc_IFC4X1_schema\ifc_IFC4X1_generated_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X1_generated_select.cs" />
-        <Compile Link="ifc_IFC4X1_schema\ifc_IFC4X1_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X1_generated_type.cs" />
-      </ItemGroup>
-    </When>
-    <When Condition=" '$(IfcSpecification)'=='IFC4X2' ">
-      <ItemGroup>
-        <Compile Link="ifc_IFC4X2_schema\ifc_IFC4X2_generated_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X2_generated_entity.cs" />
-        <Compile Link="ifc_IFC4X2_schema\ifc_IFC4X2_generated_enum.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X2_generated_enum.cs" />
-        <Compile Link="ifc_IFC4X2_schema\ifc_IFC4X2_generated_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X2_generated_select.cs" />
-        <Compile Link="ifc_IFC4X2_schema\ifc_IFC4X2_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X2_generated_type.cs" />
-      </ItemGroup>
-    </When>
-    <When Condition=" '$(IfcSpecification)'=='IFC4X3_RC1' ">
-      <ItemGroup>
-        <Compile Link="ifc_IFC4X3_RC1_schema\ifc_IFC4X3_RC1_generated_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC1_generated_entity.cs" />
-        <Compile Link="ifc_IFC4X3_RC1_schema\ifc_IFC4X3_RC1_generated_enum.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC1_generated_enum.cs" />
-        <Compile Link="ifc_IFC4X3_RC1_schema\ifc_IFC4X3_RC1_generated_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC1_generated_select.cs" />
-        <Compile Link="ifc_IFC4X3_RC1_schema\ifc_IFC4X3_RC1_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC1_generated_type.cs" />
-      </ItemGroup>
-    </When>
-    <When Condition=" '$(IfcSpecification)'=='IFC4X3_RC2' ">
-      <ItemGroup>
-        <Compile Link="ifc_IFC4X3_RC2_schema\ifc_IFC4X3_RC2_generated_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC2_generated_entity.cs" />
-        <Compile Link="ifc_IFC4X3_RC2_schema\ifc_IFC4X3_RC2_generated_enum.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC2_generated_enum.cs" />
-        <Compile Link="ifc_IFC4X3_RC2_schema\ifc_IFC4X3_RC2_generated_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC2_generated_select.cs" />
-        <Compile Link="ifc_IFC4X3_RC2_schema\ifc_IFC4X3_RC2_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_IFC4X3_RC2_generated_type.cs" />
-      </ItemGroup>
-    </When>
-  </Choose>
+  <ItemGroup>
+    <Compile Link="ifc_$(IfcSpecification)_schema\ifc_$(IfcSpecification)_generated_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_$(IfcSpecification)_generated_entity.cs" />
+    <Compile Link="ifc_$(IfcSpecification)_schema\ifc_$(IfcSpecification)_generated_enum.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_$(IfcSpecification)_generated_enum.cs" />
+    <Compile Link="ifc_$(IfcSpecification)_schema\ifc_$(IfcSpecification)_generated_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_$(IfcSpecification)_generated_select.cs" />
+    <Compile Link="ifc_$(IfcSpecification)_schema\ifc_$(IfcSpecification)_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_$(IfcSpecification)_generated_type.cs" />
+  </ItemGroup>
   <ItemGroup>
     <!-- ifcStep -->
     <Compile Link="ifc_io\ifc_in_step.cs" Include="..\..\..\IfcSharpLibrary\IfcStep\ifc_in_step.cs" />
@@ -151,6 +107,7 @@
     <Compile Link="ifc_core\Ifc_guid.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\Ifc_guid.cs" />
     <Compile Link="ifc_core\ifc_base_units.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_units.cs" />
     <Compile Link="ifc_core\ifc_base_geometry.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_geometry.cs" />
+    <Compile Link="ifc_core\ifc_logging.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_logging.cs" />
   </ItemGroup>
   <ItemGroup>
     <!-- ifcSqlite -->

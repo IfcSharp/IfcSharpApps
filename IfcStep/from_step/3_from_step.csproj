@@ -77,6 +77,7 @@
     <Compile Link="ifc_core\Ifc_guid.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\Ifc_guid.cs" />
     <Compile Link="ifc_core\ifc_base_units.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_units.cs" />
     <Compile Link="ifc_core\ifc_base_geometry.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_geometry.cs" />
+    <Compile Link="ifc_core\ifc_logging.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_logging.cs" />
   </ItemGroup>
 
   <ItemGroup>

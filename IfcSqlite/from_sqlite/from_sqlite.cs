@@ -8,7 +8,7 @@ namespace ifc
         static void Main(string[] args)
         {
             Model m = ifc.Model.FromSqliteFile("../../hello_pipe_short.sqlite");
-            m.Header.name = "hello_pipe_short_FROM_SQLITE";
+            m.Header.Name = "hello_pipe_short_FROM_SQLITE";
             m.ToSqliteFile();
             m.ToHtmlFile();
             m.ToStepFile();

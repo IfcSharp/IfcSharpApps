@@ -5,12 +5,12 @@ class hello_pipe {static void Main(string[] args) {//###########################
  #else
 
 ifc.Model                   PipeModel=new ifc.Model();
-                            PipeModel.Header.name = "hello_pipe_short";
-                            PipeModel.Header.description = @"see http://www.team-solutions.de/ifc-examples/";
-                            PipeModel.Header.author = "Bernhard Simon Bock, Friedrich Eder";
-                            PipeModel.Header.organization=@"https://github.com/IfcSharp";
-                            PipeModel.Header.originating_system = "IfcSharp";
-                            PipeModel.Header.documentation = "no docs";
+                            PipeModel.Header.Name = "hello_pipe_short";
+                            PipeModel.Header.ViewDefinition = @"see http://www.team-solutions.de/ifc-examples/";
+                            PipeModel.Header.Author = "Bernhard Simon Bock, Friedrich Eder";
+                            PipeModel.Header.Organization=@"https://github.com/IfcSharp";
+                            PipeModel.Header.OriginatingSystem = "IfcSharp";
+                            PipeModel.Header.Documentation = "no docs";
 ifc.Repository.CurrentModel=PipeModel;
 
                          new ifc.EntityComment             (CommentLine     :"local coords:");

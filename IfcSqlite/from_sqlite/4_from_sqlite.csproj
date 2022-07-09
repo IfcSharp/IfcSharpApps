@@ -17,7 +17,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>$(IfcSpecification)</OutputPath>
-    <DefineConstants>TRACE;DEBUG;$(IfcSpecification)</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;INCLUDE_SQLITE;$(IfcSpecification)</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <LangVersion>7.3</LangVersion>
@@ -67,6 +67,7 @@
     <Compile Link="ifc_core\Ifc_guid.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\Ifc_guid.cs" />
     <Compile Link="ifc_core\ifc_base_units.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_units.cs" />
     <Compile Link="ifc_core\ifc_base_geometry.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_geometry.cs" />
+    <Compile Link="ifc_core\ifc_logging.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_logging.cs" />
   </ItemGroup>
 
   <ItemGroup>  <!-- ifcSqlite -->

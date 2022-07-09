@@ -23,7 +23,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>$(IfcSpecification)</OutputPath>
-    <DefineConstants>TRACE;DEBUG;$(IfcSpecification)</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;INCLUDE_SQLITE;$(IfcSpecification)</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -47,15 +47,12 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
-
-
   <ItemGroup>
     <Compile Link="ifc_$(IfcSpecification)_schema\ifc_$(IfcSpecification)_generated_entity.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_$(IfcSpecification)_generated_entity.cs" />
     <Compile Link="ifc_$(IfcSpecification)_schema\ifc_$(IfcSpecification)_generated_enum.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_$(IfcSpecification)_generated_enum.cs" />
     <Compile Link="ifc_$(IfcSpecification)_schema\ifc_$(IfcSpecification)_generated_select.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_$(IfcSpecification)_generated_select.cs" />
     <Compile Link="ifc_$(IfcSpecification)_schema\ifc_$(IfcSpecification)_generated_type.cs" Include="..\..\..\IfcSharpLibrary\IfcSchema\ifc_$(IfcSpecification)_generated_type.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <!-- ifcStep -->
     <Compile Link="ifc_io\ifc_in_step.cs" Include="..\..\..\IfcSharpLibrary\IfcStep\ifc_in_step.cs" />
@@ -79,6 +76,7 @@
     <Compile Link="ifc_core\Ifc_guid.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\Ifc_guid.cs" />
     <Compile Link="ifc_core\ifc_base_units.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_units.cs" />
     <Compile Link="ifc_core\ifc_base_geometry.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_geometry.cs" />
+    <Compile Link="ifc_core\ifc_logging.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_logging.cs" />
   </ItemGroup>
   <ItemGroup>
     <!-- ifcSqlite -->

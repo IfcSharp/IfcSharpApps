@@ -13,10 +13,9 @@ new ifc.Project(GlobalId:ifc.GloballyUniqueId.NewId(),Name:new ifc.Label("my fir
 
 ifc.Repository.CurrentModel.ToStepFile();  // creates hello_project_output.ifc (step-format)
 ifc.Repository.CurrentModel.ToHtmlFile();  // creates hello_project_output.html in step-format with syntax highlighting
-ifc.Repository.CurrentModel.ToCsFile();    // creates hello_project_output.cs with c# code (useful for creating code from existing files)
-ifc.Repository.CurrentModel.ToSqliteFile();// creates hello_project_output.sqlite3 with the default option exportCompleteSchema=false 
-ifc.Repository.CurrentModel.ToXmlFile();   // creates hello_project_output.ifcXml
-ifc.Repository.CurrentModel.ToSqlFile();   // creates SQL for ifcSQL without server-connection
+//ifc.Repository.CurrentModel.ToCsFile();    // creates hello_project_output.cs with c# code (useful for creating code from existing files)
+//ifc.Repository.CurrentModel.ToSqliteFile();// creates hello_project_output.sqlite3 with the default option exportCompleteSchema=false 
+//ifc.Repository.CurrentModel.ToXmlFile();   // creates hello_project_output.ifcXmile();   // creates SQL for ifcSQL without server-connection
 //ifc.Repository.CurrentModel.ToSql(ServerName: System.Environment.GetEnvironmentVariable("SqlServer"), DatabaseName:"ifcSQL",ProjectId:0,WriteMode:ifc.Model.eWriteMode.OnlyIfEmpty); // Sql server connection required
 //ifc.Repository.CurrentModel.ToSql(ServerName: System.Environment.GetEnvironmentVariable("SqlServer"), DatabaseName:"ifcSQL",WriteMode:ifc.Model.eWriteMode.CreateNewProject); // Sql server connection required
 //ifc.Repository.CurrentModel.ToSql(ServerName: System.Environment.GetEnvironmentVariable("SqlServer"), DatabaseName:"ifcSQL",WriteMode:ifc.Model.eWriteMode.DeleteBeforeWrite); // Sql server connection required

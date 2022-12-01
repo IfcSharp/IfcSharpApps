@@ -31,7 +31,12 @@
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
-[Bb]uild[Ll]og.*
+[Bb]uild[Ll]
+
+*.exe
+*.dll
+*.xml
+*.html
 
 *.ifc
 *.sqlite

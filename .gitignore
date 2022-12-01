@@ -37,6 +37,7 @@
 *.dll
 *.xml
 *.html
+*.config
 
 *.ifc
 *.sqlite

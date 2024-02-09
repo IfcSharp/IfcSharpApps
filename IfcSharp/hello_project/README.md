@@ -17,7 +17,7 @@ ifc.Repository.CurrentModel.ToSqliteFile();// creates hello_project_output.sqlit
 ifc.Repository.CurrentModel.ToXmlFile();   // creates hello_project_output.ifcXml
 ifc.Repository.CurrentModel.ToSqlFile();   // creates SQL for ifcSQL without server-connection
 ifc.Repository.CurrentModel.ToSql(ServerName: System.Environment.GetEnvironmentVariable("SqlServer"), 
-                                  DatabaseName:"ifcSQL_Instance",ProjectId:3,
+                                  DatabaseName:"ifcSQL",ProjectId:3,
                                   WriteMode:ifc.Model.eWriteMode.CreateNewProject); // SQL Server required
 }catch(System.Exception e){System.Console.WriteLine(e.Message);} 
 }}

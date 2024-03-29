@@ -81,15 +81,15 @@
   </ItemGroup>
   <ItemGroup>
     <!-- ifcStep -->
-    <Compile Link="ifc_io\ifc_in_step.cs" Include="..\..\..\IfcSharpLibrary\IfcStep\ifc_in_step.cs" />
-    <Compile Link="ifc_io\ifc_out_step.cs" Include="..\..\..\IfcSharpLibrary\IfcStep\ifc_out_step.cs" />
-    <Compile Link="ifc_io\ifc_out_html.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_out_html.cs" />
-    <Compile Link="ifc_io\ifc_out_cs.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_out_cs.cs" />
+    <Compile Link="ifc_io\ifc_in_step.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcStep\ifc_in_step.cs" />
+    <Compile Link="ifc_io\ifc_out_step.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcStep\ifc_out_step.cs" />
+    <Compile Link="ifc_io\ifc_out_html.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\ifc_out_html.cs" />
+    <Compile Link="ifc_io\ifc_out_cs.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\ifc_out_cs.cs" />
   </ItemGroup>
   <ItemGroup>
     <!-- ifc_xml -->
-    <Compile Link="ifc_io\ifc_out_xml.cs" Include="..\..\..\IfcSharpLibrary\IfcXml\ifc_out_Xml.cs" />
-    <Compile Link="ifc_io\ifc_in_xml.cs" Include="..\..\..\IfcSharpLibrary\IfcXml\ifc_in_xml.cs" />
+    <Compile Link="ifc_io\ifc_out_xml.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcXml\ifc_out_Xml.cs" />
+    <Compile Link="ifc_io\ifc_in_xml.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcXml\ifc_in_xml.cs" />
   </ItemGroup>
   <ItemGroup>
     <!-- ifcSharpCore -->
@@ -111,18 +111,18 @@
   </ItemGroup>
   <ItemGroup>
     <!-- ifcSqlite -->
-    <Compile Link="ifc_sqlite\ifc_sqlite_database.cs" Include="..\..\..\IfcSharpLibrary\IfcSqlite\ifc_sqlite_database.cs" />
-    <Compile Link="ifc_sqlite\ifc_sqlite_data.cs" Include="..\..\..\IfcSharpLibrary\IfcSqlite\ifc_sqlite_data.cs" />
-    <Compile Link="ifc_sqlite\ifc_in_sqlite.cs" Include="..\..\..\IfcSharpLibrary\IfcSqlite\ifc_in_sqlite.cs" />
-    <Compile Link="ifc_sqlite\ifc_out_sqlite.cs" Include="..\..\..\IfcSharpLibrary\IfcSqlite\ifc_out_sqlite.cs" />
+    <Compile Link="ifc_sqlite\ifc_sqlite_database.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcSqlite\ifc_sqlite_database.cs" />
+    <Compile Link="ifc_sqlite\ifc_sqlite_data.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcSqlite\ifc_sqlite_data.cs" />
+    <Compile Link="ifc_sqlite\ifc_in_sqlite.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcSqlite\ifc_in_sqlite.cs" />
+    <Compile Link="ifc_sqlite\ifc_out_sqlite.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcSqlite\ifc_out_sqlite.cs" />
   </ItemGroup>
-  <Import Project="..\..\..\IfcSharpLibrary\IfcSqlite\ifc_sqlite.csproj" />
+  <Import Project="..\..\..\IfcSharpLibrary\IfcIO\IfcSqlite\ifc_sqlite.csproj" />
   <ItemGroup>
     <!-- ifc_sql -->
-    <Compile Link="ifcSQL\ifcSQL_for_ifcSQL_Instance.cs" Include="..\..\..\IfcSharpLibrary\IfcSql\ifcSQL_for_ifcSQL_Instance.cs" />
-    <Compile Link="ifcSQL\ifcSQL_db_interface.cs" Include="..\..\..\IfcSharpLibrary\IfcSql\ifcSQL_db_interface.cs" />
-    <Compile Link="ifc_io\ifc_out_sql.cs" Include="..\..\..\IfcSharpLibrary\IfcSql\ifc_out_sql.cs" />
-    <Compile Link="ifc_io\ifc_in_sql.cs" Include="..\..\..\IfcSharpLibrary\IfcSql\ifc_in_sql.cs" />
+    <Compile Link="ifcSQL\ifcSQL_for_ifcSQL_Instance.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcSql\ifcSQL_for_ifcSQL_Instance.cs" />
+    <Compile Link="ifcSQL\ifcSQL_db_interface.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcSql\ifcSQL_db_interface.cs" />
+    <Compile Link="ifc_io\ifc_out_sql.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcSql\ifc_out_sql.cs" />
+    <Compile Link="ifc_io\ifc_in_sql.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcSql\ifc_in_sql.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="hello_pipe.cs" />

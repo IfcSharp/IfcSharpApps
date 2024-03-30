@@ -2,8 +2,9 @@
 class from_ifcSQL {static void Main(string[] args){//#######################################################################
 try{ 
 ifc.Model m = ifc.Model.FromSql(ServerName:System.Environment.GetEnvironmentVariable("SqlServer"), DatabaseName:"ifcSQL",ProjectId:0);// 0 = current project
-          m.ToHtmlFile();
-          m.ToStepFile();
+if (args.Length>0)     m.Header.Name=args[0];
+          m.ToHtmlFile(m.Header.Name+".ifc.html");
+          m.ToStepFile(m.Header.Name+".ifc");
 }catch(System.Exception e){System.Console.WriteLine(e.Message);} 
 }}//########################################################################################################################
 

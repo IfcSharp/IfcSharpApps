@@ -3,6 +3,7 @@ class from_ifcSQL {static void Main(string[] args){//###########################
 try{ 
 ifc.ENTITY.IfcLineConstText="= IFC";
 ifc.Model m = ifc.Model.FromSql(ServerName:System.Environment.GetEnvironmentVariable("SqlServer"), DatabaseName:"ifcSQL",ProjectId:0);// 0 = current project
+                       m.Header.Name="from_ifcSQL";
 if (args.Length>0)     m.Header.Name=args[0]; 
           m.ToStepFile(m.Header.Name+".ifc");
 }catch(System.Exception e){System.Console.WriteLine(e.Message);} 

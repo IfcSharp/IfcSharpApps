@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1B536DBB-2CDD-4B46-8358-C3137152B82A}</ProjectGuid>
+    <ProjectGuid>{0B9A18E1-5D4A-48B7-895D-84A74B1D163C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <LangVersion>latest</LangVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -78,14 +78,16 @@
     <Compile Link="ifc_core\ifc_base_geometry.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_base_geometry.cs" />
     <Compile Link="ifc_core\ifc_logging.cs" Include="..\..\..\IfcSharpLibrary\IfcSharpCore\ifc_logging.cs" />
   </ItemGroup>
+  <!-- ifcSqlite -->
+  <!--
   <ItemGroup>
-    <!-- ifcSqlite -->
     <Compile Link="ifc_sqlite\ifc_sqlite_database.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcSqlite\ifc_sqlite_database.cs" />
     <Compile Link="ifc_sqlite\ifc_sqlite_data.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcSqlite\ifc_sqlite_data.cs" />
     <Compile Link="ifc_sqlite\ifc_in_sqlite.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcSqlite\ifc_in_sqlite.cs" />
     <Compile Link="ifc_sqlite\ifc_out_sqlite.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcSqlite\ifc_out_sqlite.cs" />
   </ItemGroup>
   <Import Project="..\..\..\IfcSharpLibrary\IfcIO\IfcSqlite\ifc_sqlite.csproj" />
+-->
   <ItemGroup>
     <!-- ifc_sql -->
     <Compile Link="ifcSQL\ifcSQL_for_ifcSQL_Instance.cs" Include="..\..\..\IfcSharpLibrary\IfcIO\IfcSql\ifcSQL_for_ifcSQL_Instance.cs" />

@@ -10,7 +10,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ifcStep2ifcSQL</RootNamespace>
-    <AssemblyName>ifcStep2ifcSQL</AssemblyName>
+    <AssemblyName>ifcStep2ifcSQL_$(IfcSpecification)</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <LangVersion>latest</LangVersion>
     <TargetFrameworkProfile>

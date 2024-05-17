@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6_from_ifcSQL", "6_from_ifcSQL.csproj", "{F9F0213A-A8B8-4494-A2CD-9A24EE31D1DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "from_ifcSQL", "from_ifcSQL.csproj", "{F9F0213A-A8B8-4494-A2CD-9A24EE31D1DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

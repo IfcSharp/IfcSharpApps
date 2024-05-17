@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_from_sqlite", "IfcSqlite\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5_hello_schema", "IfcSharp\hello_schema\5_hello_schema.csproj", "{E1FE7B46-B6D1-4809-BFD7-1921193DE7AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6_from_ifcSQL", "ifcSQL\from_ifcSQL\6_from_ifcSQL.csproj", "{F9F0213A-A8B8-4494-A2CD-9A24EE31D1DA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
